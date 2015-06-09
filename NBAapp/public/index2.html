@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<form action="index.html" method="get">
+  <title>NBA App</title>
+</head>
+<body>
+  <div class="text-center" ng-controller="AppCtrl">
+    <h1>NBA App</h1>
+        <h3> NBA Players</h3>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th>FirstName</th>         
+          <th>LastName</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <button class="btn btn-primary" ng-click="NBATeams('/index')">NBATeams</button>
+          <td><input class="form-control" ng-model="NBA.firstName"></td>
+          <td><input class="form-control" ng-model="NBA.lastName"></td>
+          <td><button class="btn btn-primary" ng-click="addNBA()">Add Player</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
+          <button class="btn btn-info" ng-click="deselect()">Clear</button>
+          
+</td>
+        </tr>
+        <tr ng-repeat="NBA in players">
+          <td>{{NBA.firstName}}</td>
+          <td>{{NBA.lastName}}</td>
+
+          <td><button class="btn btn-danger" ng-click="remove(NBA._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(NBA._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller2.js"></script>
+</body>
+</html>

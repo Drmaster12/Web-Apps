@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<form action="index2.html" method="get">
+  <title>NBA App</title>
+</head>
+<body>
+  <div class="text-center" ng-controller="AppCtrl">
+    <h1>NBA App</h1>
+    <h3> NBA Teams</h3>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>TeamName</th>         
+          <th>Abbreviation</th>
+          <th>SimpleName</th>
+          <th>Location</th>
+          <th>TeamID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <button class="btn btn-primary" ng-click="NBAPlayers('/index2')">NBAPlayers</button>
+        </tr>
+        <tr ng-repeat="NBA in teams">
+          <td>{{NBA.teamName}}</td>
+          <td>{{NBA.abbreviation}}</td>
+          <td>{{NBA.simpleName}}</td>
+          <td>{{NBA.location}}</td>
+          <td>{{NBA.teamId}}</td>
+
+          <td><button class="btn btn-danger" ng-click="remove(NBA._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(NBA._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
