@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+ 
+
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<a><img style="height:200px" opacity="1.0" src="/images/moneyteam.png"class="img-responsive center-block" />
+</a>
+  <title>Bank App</title>
+</head>
+<body>
+  <div class="text-center" ng-controller="AppCtrl">
+    <h1>Bank App</h1>
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>         
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Age</th>
+          <th>EyeColor</th>
+          <th>Company</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>IsActive</th>
+          <th>Balance</th>
+          <th>Action</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="bankerdb.name"></td>
+          <td><input class="form-control" ng-model="bankerdb.email"></td>
+          <td><input class="form-control" ng-model="bankerdb.phone"></td>
+          <td><input class="form-control" ng-model="bankerdb.age"></td>
+          <td><input class="form-control" ng-model="bankerdb.eyeColor"></td>
+          <td><input class="form-control" ng-model="bankerdb.company"></td>
+          <td><input class="form-control" ng-model="bankerdb.address"></td>
+          <td><input class="form-control" ng-model="bankerdb.gender"></td>
+          <td><input class="form-control" ng-model="bankerdb.isActive"></td>
+          <td><input class="form-control" ng-model="bankerdb.balance"></td>
+          <td><button class="btn btn-primary" ng-click="addbankerdb()">Add Banker</button></td>
+          <td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+        </tr>
+        <tr ng-repeat="bankerdb in banklist">
+          <td>{{bankerdb.name}}</td>
+          <td>{{bankerdb.email}}</td>
+          <td>{{bankerdb.phone}}</td>
+          <td>{{bankerdb.age}}</td>
+          <td>{{bankerdb.eyeColor}}</td>
+          <td>{{bankerdb.company}}</td>
+          <td>{{bankerdb.address}}</td>
+          <td>{{bankerdb.gender}}</td>
+          <td>{{bankerdb.isActive}}</td>
+          <td>{{bankerdb.balance}}</td>
+          <td><button class="btn btn-danger" ng-click="remove(bankerdb._id)">Remove</button></td>
+          <td><button class="btn btn-warning" ng-click="edit(bankerdb._id)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
